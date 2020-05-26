@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Weather</title>
+    <link rel="stylesheet" href="/css/styles.css">
+    <link rel="shortcut icon" href="/img/weather.png" type="image/x-icon">
+</head>
+
+<body>
+    <div class="main-content">
+        {{>header}}
+        <p>Use this site to get your weather!</p>
+        <form method="get">
+            <input type="text" name="location" placeholder="Type your location">
+            <button type="submit">Search</button>
+        </form>
+        <div id="result"></div>
+    </div>
+    {{>footer}}
+    <script src="/js/app.js"></script>
+</body>
+
+</html>
