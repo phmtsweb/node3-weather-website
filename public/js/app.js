@@ -22,11 +22,12 @@ weatherForm.addEventListener('submit', (e) => {
             error.appendChild(document.createTextNode(response.error));
             result.appendChild(error);
         } else {
-            const { location, description, temperature, feelslike, weatherURLImg } = response || {};
+            const { location, description, temperature, feelslike, weatherURLImg, humidity } = response || {};
             console.log(weatherURLImg);
             const pLocation = document.createElement('p');
             const pDescription = document.createElement('p');
             const forecast = document.createElement('p');
+            const pHumidity = document.createElement('p');
             const weatherImg = document.createElement('img');
             weatherImg.src = weatherURLImg;
             const divImg = document.createElement('div');
@@ -34,9 +35,11 @@ weatherForm.addEventListener('submit', (e) => {
             pLocation.appendChild(document.createTextNode(location));
             pDescription.appendChild(document.createTextNode(description));
             forecast.appendChild(document.createTextNode(`It is currently ${temperature} degrees out. It feels like ${feelslike} degrees out.`));
+            pHumidity.appendChild(document.createTextNode(`Humidity ${humidity}%`));
             divImg.appendChild(weatherImg);
             divInfo.appendChild(pLocation);
             divInfo.appendChild(pDescription);
+            divInfo.appendChild(pHumidity);
             divInfo.appendChild(forecast);
             result.appendChild(divImg);
             result.appendChild(divInfo);

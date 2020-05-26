@@ -39,6 +39,7 @@ header a {
 
 #result {
     display: flex;
+    padding: 8px 0;
 }
 
 #result div:first-child {

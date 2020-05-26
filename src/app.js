@@ -69,7 +69,7 @@ app.get('/weather/:address?/:unit?', (req, res) => {
                 error
             });
         }
-        forecast((error, { temperature, feelslike, description, weatherURLImg } = {}) => {
+        forecast((error, { temperature, feelslike, description, weatherURLImg, humidity } = {}) => {
             if (error) {
                 return res.send({
                     error
@@ -80,7 +80,8 @@ app.get('/weather/:address?/:unit?', (req, res) => {
                 description,
                 temperature,
                 feelslike,
-                weatherURLImg
+                weatherURLImg,
+                humidity
             });
         }, latitude, longitude, unit);
 
