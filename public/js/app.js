@@ -4,8 +4,9 @@ const search = document.querySelector('input');
 weatherForm.addEventListener('submit', (e) => {
     e.preventDefault();
     const location = search.value;
+    const result = document.getElementById('result');
+    result.textContent = 'Loading...'
     getWeather(location, (response) => {
-        const result = document.getElementById('result');
         const mainContent = document.querySelector('main-content');
         if (!result) {
             result = document.createElement('div');
